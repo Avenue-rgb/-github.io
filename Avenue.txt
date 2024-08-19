@@ -1,6 +1,7 @@
-<!--DOCTYPE html-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> ᴹᴿᴀᴠᴇɴᴜᴇ </title>
@@ -8,171 +9,226 @@
 </head>
 <body>
 
-
     <style>
- label {
-          
-          color:white;
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            background-color: #000000;
+            
+        }
+
+        #copyContainer {
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+
+        .replyContainer {
+            margin: 5px;
+            margin-left: 10px;
             margin-right: 10px;
+            cursor: pointer;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-    
 
-        select {
+        .replyText {
             padding: 10px;
-            margin: 10px auto;
-            border: 10px solid #ff0000; /* Darken the border color */
-            border-radius: 150px;
-            transition: background-color 0.3s;
-            width: 100%;
+            border: 2px solid rgb(243, 21, 21);
+            outline: 2px solid #95a5a6;
+            background-color: black;
+            color: azure;
             text-align: center;
-            background-color: #4e0000; /* Dark background color */
-            color: white; /* White text color */
-            font-weight: bold; /* Bold text */
+            width: 100%;
+            height:auto;
+            overflow-block: hidden;
+            border-radius: 5px;
+            transition: background-color 0.5s ease;
+            align-self: flex-start; /* Add this line to align the replyText to the top */
         }
-    
-    
 
+
+
+        .replyText:hover {
+            background-color: moccasin;
+            color: rgb(243, 21, 21);
+        }
+
+        #notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #2ecc71;
+            color: #fff;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            animation: fadeInOut 1s ease-out forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; visibility: hidden; }
+            10% { opacity: 1; visibility: visible; }
+            90% { opacity: 1; visibility: visible; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        .title{
+            width: 100%;
+            height: auto;
+            padding: 10px;
+            font-size: 20px;
+            font-weight:bold;
+            transition: background-color 0.5s ease;
+            background-color: #2ecc71;
+            text-align: center;
+            
+        }
+    .my-button {
+      background-color:moccasin; /* Green */
+      border: none;
+      color: rgb(0, 0, 0);
+      padding: 10px 10px;
+      text-align: center;
+      font-weight: bolder;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 8px;
+      height: 20px;
+      width: 80px;
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+    .marquee {
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                box-sizing: border-box;
+                animation: marquee 10s linear infinite;
+            }
+    
+            @keyframes marquee {
+                0% {
+                    transform: translateX(100%);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
     </style>
-    
+</head>
+<body>
 
-    
+ 
 
 <div class="containereu">
+</div>
 
- <div>
-    <label for="language">₳𝓋𝗲ᶰ𝓾𝗲</label>
-    
-  </div>
-
-<button class="button button5 kb-source fa-icon">Yes, It's available <br>Which size are you looking for ❦︎ 🍁?
-        <p class="hidden" id="l-text" 
-        data-english="Yes, It's available<br>Which size are you looking for?" ></p>
-   </button>
+<div class="title" style="padding: 0%;">₳𝓋𝗲ᶰ𝓾𝗲</div>
+</div>
+<div class="replyContainer" onclick="copyToClipboard('reply2')">
+<div class="replyText" id="reply2" data-title=">Yes, It's available
+Which size are you looking for? " data-message="Yes, It's available
+Which size are you looking for?">Yes, It's available
+Which size are you looking for?❦ 🍁? </div>
+   </div>
           
         
-        
-        
-        <button class="button button-4row kb-source fa-icon">
-        High-quality 💸
-            <p class="hidden" id="l-text" 
-        data-english="Our beds are crafted from high-quality materials, designed to offer exceptional comfort and support. We carefully select the finest materials to ensure durability and longevity. Additionally, we stand by the quality of our products, offering a warranty to give our customers peace of mind." 
-    ></p>  </button> 
-        
-        <button style="background-color: #0b0f14;" class="button button-4row kb-source fa-icon"  >
-          1 Year Warranty, Cash 💰☂️
-         <p class="hidden" id="l-text" 
-         data-english="For your convenience, we offer free home delivery, a one-year warranty, and the option of cash on delivery." 
-   ></p> </button>
-         
-          <button style="background-color: #2e3300;" class="button button-4row kb-source fa-icon"  >
-        BED Instructions 🎴
-         <p class="hidden" id="l-text" 
-         data-english="We'll send you the bed assembly instructions" 
-      ></p>  </button>
-         
-
-        
-       <button class="button button-4row kb-source fa-icon" >
-        🎀 Free Delivery 🎀 
-          <p class="hidden" id="l-text" 
-         data-english="We offer free home delivery." ></p>
-        </button> 
-          
-        <button class="button button-4row kb-source fa-icon">
-        👻 Pay on Delivery 👻
-          <p class="hidden" id="l-text" 
-         data-english="Payment on delivery available." ></p>
-        </button> 
-
-
-         <button style="background-color: #401f14;" class="button button-4row kb-source fa-icon">
-          Mattresses All Detail 🦂
-            <p class="hidden" id="l-text" 
-         data-english="Mattresses Options:<br><br>3D Mattress &#163;30<br>Full Memory Foam Mattress &#163;40<br>1000 Pocket Mattress &#163;40<br>2000 Pocket Mattress &#163;60" 
- ></p>
-           </button> 
-          
-           <button style="background-color: #8f005f;" class="button button-4row kb-source fa-icon"  >
-            🛠&#65039;&#65039;Drawers Charges 🐶&#65039;
-    <p class="hidden" id="l-text" 
-             data-english="Drawers are optional:<br><br>1x drawer &#163;15<br>2x drawer &#163;30<br>4x drawer &#163;60<br>Large footend drawer &#163;20" ></p>
-          </button> 
-      <button style="background-color: #012087;" class="button button-4row kb-source fa-icon"  >
-        &#11088;Facebook And Whatsapp 
-         <p class="hidden" id="l-text" 
-         data-english="If we're unavailable here, please reach out to us via our Facebook page: https://www.facebook.com/howbeds <br><br>WhatsApp 07979512739,<br>Thank you" 
-        ></p></button>
-        
-        <button class="button button-3row kb-source fa-icon"  >
-        We offer Factory Prices, retail shop 👻
-        <p class="hidden" id="l-text" 
-         data-english="As the direct manufacturers of our beds, we are pleased to offer our customers factory prices. This allows us to provide lower prices compared to retail shops." ></p>
-       </button> 
-
-         <button class="button button-3row kb-source fa-icon"  >
-          Free Advertisement 🥺
-            
-            <p class="hidden" id="l-text" 
-         data-english="Oops! 😔 We apologize for the incorrect price in the ad. But don't worry, we have an incredible range of bed sizes 🛏&#65039; (single, small double, double, king, and super king) available in a variety of colors 🌈 and designs 🎨. Our Support team is here to assist you promptly. Simply reach out to us on WhatsApp at +44 7979 512739. Thank you &#10084;&#65039;" 
-       ></p></button> 
-
-
-  <button style="background-color: #013619;" class="button button-3row kb-source fa-icon"  >
-        All Bed and Mattress Brand New🔊
-          <p class="hidden" id="l-text" 
-         data-english="Our beds and mattresses are brand new, of high quality, and factory-packed. You are welcome to inspect them before making your payment." 
-   ></p> </button> 
-        
-        
-        
-         <button  style="background-color: #132942;" class="button button5 kb-source fa-icon">You can message me anytime here, and I'll be happy to assist you!&#10084;&#65039;
-            <p class="hidden" id="l-text" 
-            data-english="Feel free to message me anytime if you have any questions now or in the future, and I'll be happy to assist you! &#10084;&#65039;" 
-         ></p>  </button>
-        
-        
+  <div class="replyContainer" onclick="copyToClipboard('reply3')">
+    <div class="replyText" id="reply3" data-title="High-quality >" data-message="Our beds are crafted from high-quality materials, designed to offer exceptional comfort and support. We carefully select the finest materials to ensure durability and longevity. Additionally, we stand by the quality of our products, offering a warranty to give our customers peace of mind. ">High-quality 💸</div> 
+      </div>
        
         
+    
+  <div class="replyContainer" onclick="copyToClipboard('reply4')">
+              <div class="replyText" id="reply4" data-title="1 Year Warranty, Cash 💰☂>" data-message="For your convenience, we offer free home delivery, a one-year warranty, and the option of cash on delivery."> 1 Year Warranty, Cash 💰☂</div>
+         </div>
         
         
         
+       <div class="replyContainer" onclick="copyToClipboard('reply5')">
+           <div class="replyText" id="reply5" data-title="BED Instructions 🎴 >"data-message="We'll send you the bed assembly instructions">BED Instructions 🎴</div>
+        </div>
         
-        
-        <button class="button button-5row kb-source fa-icon">&#163;25 Assembly Divan
-          <p class="hidden" id="l-text" 
-         data-english="Bed assembly is available for an additional charge of &#163;25, payable directly to the driver." 
-       ></p>  </button> 
-        
-        <button style="background-color: #0b0f14;" class="button button-5row kb-source fa-icon"  >
-        Upstairs &#163;10🏠🚶&#8205;&#9794;&#65039;
-        <p class="hidden" id="l-text" 
-         data-english="Upstairs delivery is available for a &#163;10 fee, payable directly to the driver." 
-      </p></button>
+             <div class="replyContainer" onclick="copyToClipboard('reply6')">
+           <div class="replyText" id="reply6" data-title="🎀 Free Delivery 🎀>"data-message="We offer free home delivery.">🎀 Free Delivery 🎀</div>
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply7')">
+           <div class="replyText" id="reply7" data-title="👻 Pay on Delivery 👻>"data-message="Payment on delivery available.">👻 Pay on Delivery 👻</div>
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply8')">
+           <div class="replyText" id="reply8" data-title="Mattresses All Detail 🦂>"data-message="Mattresses Options:
 
-         <button style="background-color: #0b0f14;" class="button button-5row kb-source fa-icon"  >
-          Divan Assm Video&#9654;&#65039;
-<p class="hidden" id="l-text" 
-         data-english="Divan Bed Instructions<br><br>Connect your base<br>https://youtube.com/shorts/aa5sCmzopN0<br><br>Connect headboard to a base<br>https://youtube.com/shorts/1ytMxUOiZVE<br><br>Locate the headboard threads on your base<br>https://youtube.com/shorts/T7dN1WbsdR8" 
-      
-          ></p><button class="button button-5row kb-source fa-icon"  >
-Ottoman Video&#9654;&#65039;
-<p class="hidden" id="l-text" 
-         data-english="Ottoman Bed Instructions<br>https://youtu.be/Uj4hE11gpeg" ></p></button>
-        
+3D Mattress £30
+Full Memory Foam Mattress £40
+1000 Pocket Mattress £40
+2000 Pocket Mattress £60">Mattresses All Detail 🦂</div>
 
-          <button style="background-color: #2c1440;" class="button button-5row kb-source fa-icon"  >
-        WhatsApp Team📞
-         <p class="hidden" id="l-text" 
-   
-      
-         <button style="background-color: #b35100;" class="button button-2row kb-source fa-icon"  >
-          SEND YOUR POSTCODE
-            <p class="hidden" id="l-text" 
-            data-english="Please send us your postcode, and we'll check the delivery route for you." 
-   ></p> <button style="background-color: #244600;" class="button button-2row kb-source fa-icon" >
-          Send Full Address and Phone Number?&#9989;
-            <p class="hidden" id="l-text" 
-         data-english="Send your full details 💸 ?
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply9')">
+           <div class="replyText" id="reply9" data-title="🛠&#65039;&#65039;Drawers Charges 🐶&#65039;>"data-message="Drawers are optional:
+
+1x drawer £15
+2x drawer £30
+4x drawer £60
+Large footend drawer £25">🛠&#65039;&#65039;Drawers Charges 🐶&#65039;</div>
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply11')">
+           <div class="replyText" id="reply11" data-title=" We offer Factory Prices, retail shop 👻>"data-message="As the direct manufacturers of our beds, we are pleased to offer our customers factory prices. This allows us to provide lower prices compared to retail shops.">We offer Factory Prices, retail shop 👻</div>
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply12')">
+           <div class="replyText" id="reply12" data-title=" Free Advertisement 🥺>"data-message="Oops! 😔 We apologize for the incorrect price in the ad. But don't worry, we have an incredible range of bed sizes 🛏️ (single, small double, double, king, and super king) available in a variety of colors 🌈 and designs 🎨. Our Support team is here to assist you promptly.  Thank you ❤️">Free Advertisement 🥺</div>
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply13')">
+           <div class="replyText" id="reply13" data-title="All Bed and Mattress Brand New🔊>"data-message="Our beds and mattresses are all brand new, high-quality, and factory-packed. You can check them before paying as well.">All Bed and Mattress Brand New🔊</div>
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply14')">
+           <div class="replyText" id="reply14" data-title="&#163;25 Assembly Divan>"data-message="Bed assembly is available for an additional charge of £25, payable directly to the driver.">&#163;25 Assembly Divan</div>
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply15')">
+           <div class="replyText" id="reply15" data-title="Upstairs &#163;10🏠🚶&#8205;&#9794;&#65039;>"data-message="Upstairs delivery is available for a £10 fee, payable directly to the driver.">Upstairs &#163;10🏠🚶&#8205;&#9794;&#65039;</div>
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply16')">
+           <div class="replyText" id="reply16" data-title="Divan Assm Video&#9654;&#65039;>"data-message="Divan Bed Instructions
+Connect your base
+https://youtube.com/shorts/aa5sCmzopN0
+
+Connect headboard to a base
+https://youtube.com/shorts/1ytMxUOiZVE
+
+Locate the headboard threads on your base
+https://youtube.com/shorts/T7dN1WbsdR8">Divan Assm Video&#9654;&#65039;</div>
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply17')">
+           <div class="replyText" id="reply17" data-title="Ottoman Video&#9654;&#65039;>"data-message="Ottoman Bed Instructions">
+https://youtu.be/Uj4hE11gpeg">Ottoman Video&#9654;&#65039;</div>
+
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply19')">
+           <div class="replyText" id="reply19" data-title="Send Full Address and Phone Number?&#9989;>"data-message="Send your full details?
 
 👤 Name:
                         
@@ -180,1335 +236,382 @@ Ottoman Video&#9654;&#65039;
                        
 📮 Post Code:
                         
-📞 Phone Number:  " 
-     ></p></button> 
-        
-       
-    
-    <button style="background-color: #b35100;" class="button button-2row kb-source fa-icon"  >
-          SEND YOUR POSTCODE 👻
-            <p class="hidden" id="l-text" 
-            data-english="Please send us your postcode, and we'll check the delivery route for you."  ></p></button> 
-          
-       <button style="background-color: #0d0047;" class="button button-2row kb-source fa-icon"  >
-          Please check your phone number and address 🦕 
-            <p class="hidden" id="l-text" 
-            data-english=" Please check your phone number and address to make sure they are correct." ></p></button> 
-        
-        
-        
-        
-        
-        <button style="background-color: #31263d;" class="button button-4row kb-source fa-icon"  > 
-        We based in Dewsbury🛣&#65039;
-        <p class="hidden" id="l-text" 
-         data-english="Our factory is based in Dewsbury, and we are pleased to offer convenient home delivery to you." 
-    ></p> </button> 
-          
-          <button class="button button-4row kb-source fa-icon"  >
-        Big Order/Deposit/Split
-        <p class="hidden" id="l-text" 
-         data-english="For large orders, a deposit is required. Additionally, our delivery team will contact you one day before the scheduled delivery to request the deposit. Alternatively, we can split the order, delivering a portion first (e.g., 1 or 2 beds) and the rest at a later time." 
-     ></p></button> 
+📞 Phone Number:  ">Send Full Address and Phone Number?&#9989;</div>
 
-         <button style="background-color: #006a72;" class="button button-4row kb-source fa-icon"  >
-          Would you like to buy?
-          <p class="hidden" id="l-text" 
-         data-english="Would you be interested in making a purchase? Please let us know how we can assist you further." 
-     ></p>  </button> 
-        
-        <button style="background-color: #3b321c;" class="button button-4row kb-source fa-icon"  >
-        Factory not Allow Customers
-          <p class="hidden" id="l-text" 
-         data-english="🚧 For your safety and in accordance with strict guidelines, we regret that customer visits to our factory are not permitted. However, if you still wish to visit, you are welcome. Our factory is located in Dewsbury. We appreciate your understanding and thank you for your cooperation." 
-  ></p></button> 
-        
-        
-        
-    
-         <button  style="background-color: #0d0047;" class="button button-2row kb-source fa-icon">
-            1 hour before arrival! 
-            <p class="hidden" id="l-text" 
-            data-english="Our driver will give you a call approximately 30 minutes before arrival."
-   
-            <button  style="background-color: #6c007a;" class="button button-2row kb-source fa-icon">
-             IRELAND DELIVERY - 3 TO 5 DAYS
-              <p class="hidden" id="l-text" 
-              data-english="Bed will be delivered promptly within the estimated timeframe of 3 to 5 days" 
-       ></p> </button>
-          
-<button  style="background-color: #45191c;" class="button button-2row kb-source fa-icon">
-             Today ? / Tomorrow Delivery ?
-              <p class="hidden" id="l-text" 
-              data-english="We strive for fast and efficient delivery, but can't offer same/next-day service. Our standard delivery is in 2 days" ></p> </button>
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply20')">
+           <div class="replyText" id="reply20" data-title=" SEND YOUR POSTCODE 👻>"data-message="Please send us your postcode, and we'll check the delivery route for you.">SEND YOUR POSTCODE 👻</div>
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply21')">
+           <div class="replyText" id="reply21" data-title="Please check your phone number and address 🦕>" data-message="Please check your phone number and address to make sure they are correct.">Please check your phone number and address 🦕</div>
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply22')">
+           <div class="replyText" id="reply22" data-title=" We based in Dewsbury🛣&#65039;>"data-message="Our factory is based in Dewsbury, and we are pleased to offer convenient home delivery to you.">We based in Dewsbury🛣&#65039;</div>
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply22')">
+           <div class="replyText" id="reply22" data-title="   Big Order/Deposit/Split>"data-message="For large orders, a deposit is required. Additionally, our delivery team will contact you one day before the scheduled delivery to request the deposit. Alternatively, we can split the order, delivering a portion first (e.g., 1 or 2 beds) and the rest at a later time."> Big Order/Deposit/Split</div>
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply23')">
+           <div class="replyText" id="reply23" data-title="Would you like to buy?>"data-message="Would you be interested in making a purchase? Please let us know how we can assist you further.">Would you like to buy?</div>
+
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply24')">
+           <div class="replyText" id="reply24" data-title="Factory not Allow Customers>"data-message="🚧 For your safety and in accordance with strict guidelines, we regret that customer visits to our factory are not permitted. However, if you still wish to visit, you are welcome. Our factory is located in Dewsbury. We appreciate your understanding and thank you for your cooperation.">Factory not Allow Customers</div>
+
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply25')">
+           <div class="replyText" id="reply25" data-title="1 hour before arrival! >"data-message="Our driver will give you a call approximately 30 minutes before arrival.">1 hour before arrival! </div>
+
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply26')">
+           <div class="replyText" id="reply26" data-title="IRELAND DELIVERY - 3 TO 5 DAYS>"data-message="Bed will be delivered promptly within the estimated timeframe of 3 to 5 days">IRELAND DELIVERY - 3 TO 5 DAYS</div>
+
+
+
+
+
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply28')">
+           <div class="replyText" id="reply28" data-title="Confirmation 💸?>"data-message="We strive for fast and efficient delivery, but can't offer same/next-day service. Our standard delivery is in 2 days">Confirmation 💸?</div>
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply29')">
+           <div class="replyText" id="reply29" data-title="Monday>"data-message="Delivery will be on Monday">Monday</div>
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply30')">
+           <div class="replyText" id="reply30" data-title=" Tuesday>"data-message="Delivery will be on Tuesday">Tuesday</div>
+
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply4')">
+           <div class="replyText" id="reply4" data-title="Wednesday>"data-message="Delivery will be on Wednesday">Wednesday</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply31')">
+           <div class="replyText" id="reply31" data-title="Thursday>"data-message="Delivery will be on Thursday">Thursday</div>
+
+
+
+</div>
+  <div class="replyContainer" onclick="copyToClipboard('reply32')">
+           <div class="replyText" id="reply32 data-title="Friday>"data-message="Delivery will be on Friday">Friday</div>
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply33')">
+           <div class="replyText" id="reply33" data-title="Saturday>"data-message="Delivery will be on Saturday">Saturday</div>
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply34')">
+           <div class="replyText" id="reply34" data-title="Sunday>"data-message="Delivery will be on Sunday">Sunday</div>
+
+
+</div>
+
+ <div class="replyContainer" onclick="copyToClipboard('reply68')">
+           <div class="replyText" id="reply68" data-title=" Have you received your bed?>"data-message="Have you received your bed?">Have you received your bed?</div>
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply36')">
+           <div class="replyText" id="reply36" data-title=" Tomorow confirmtion>"data-message="Hi! I hope you are doing well! Tomorrow our confirmation will contact you by text/call, please reply on time. Please recheck your phone number.">Tomorow confirmtion</div>
+Thank you
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply37')">
+           <div class="replyText" id="reply37" data-title=" Please choose a color? 🌈🎨>"data-message="Please choose a color? 🌈🎨">Please choose a color? 🌈🎨</div>
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply38')">
+           <div class="replyText" id="reply38" data-title="3D Mattress Verities ×͜×>"data-message="Our 3D mattress, with a depth of 11 to 12 inches, is available in a variety of colors including Black, Grey, Silver, Cream, Suede, Mayfair, and Richmond. Experience a unique and customizable sleep experience with its adjustable air pressure and built-in 3D structures.">3D Mattress Verities ×͜×</div>
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply39')">
+           <div class="replyText" id="reply39" data-title=" 3D Mattress Specs 🎀 >"data-message="Our 3D mattress typically has a depth of 11 to 12 inches and is designed to provide a unique sleeping experience with built-in three-dimensional structures. These structures, along with adjustable air pressure, allow for personalized support and comfort, helping to reduce pressure points and regulate temperature.">3D Mattress Specs 🎀</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply40')">
+           <div class="replyText" id="reply40" data-title=" Orthophedic Mattress Specs 💸>"data-message="Our 8-inch deep orthopedic mattress offers exceptional support for back pain and ensures proper spinal alignment. Enjoy ultimate orthopedic sleep support in a compact and convenient design.">Orthophedic Mattress Specs 💸</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply41')">
+           <div class="replyText" id="reply41" data-title=" &#163;25 delivery charges 💸>"data-message="Unfortunately, we do not deliver to your area. There is a £25 delivery charge for orders outside of our service area."> &#163;25 delivery charges 💸</div>
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply42')">
+           <div class="replyText" id="reply42" data-title="  &#163;5 discount bed 🦖>"data-message="Our prices are already very competitive, however as you are a new customer we are happy to offer you a £5 discount on each bed.">&#163;5 discount bed 🦖</div>
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply43')">
+           <div class="replyText" id="reply43" data-title=" 🥹 #Number Issue 🥹>"data-message="I understand your concern, but having a phone number is important for a few reasons. Firstly, our driver needs to be able to contact you before delivery to ensure that you're available to receive the order. Additionally, our factory may need to contact you if there are any issues with your order.">🥹 #Number Issue 🥹</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply44')">
+           <div class="replyText" id="reply44" data-title="Today/Tomorrow delivery ☕>"data-message="We strive for fast and efficient delivery, but can't offer same/next-day service. Our standard delivery is in 2 days.">Today/Tomorrow delivery ☕</div>
+
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply45')">
+           <div class="replyText" id="reply45" data-title=" 💸 Payment Plan&#9940>"data-message="At this time, we do not offer payment plans for our products. However, we do accept cash on delivery, and we can work with you to schedule a convenient delivery time."> 💸 Payment Plan&#9940</div>
+
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply46')">
+           <div class="replyText" id="reply46" data-title="💫 Replace/Refund&#9989;>"data-message="Our policy is to offer a replacement or a refund for any damaged items during transit. Please contact us as soon as possible if you receive a damaged item, and we will work with you to resolve any issues. Photos of the damaged item and packaging may be required to process your claim.">💫 Replace/Refund&#9989;</div>
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply47')">
+           <div class="replyText" id="reply47" data-title="𝐏𝐨𝐫𝐭𝐬𝐦𝐨𝐮𝐭𝐡 Route - Tue,Friv>"data-message="We have Delivery routes for Different areas. In your area, we are Delivering on Tuesday and Friday.">𝐏𝐨𝐫𝐭𝐬𝐦𝐨𝐮𝐭𝐡 Route</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply48')">
+           <div class="replyText" id="reply48" data-title="𝐂𝐨𝐫𝐧𝐰𝐚𝐥𝐥 Route - Thu,Sun>"data-message="We have Delivery routes for Different areas. In your area, we are Delivering on Thursday and Sunday.">𝐂𝐨𝐫𝐧𝐰𝐚𝐥𝐥 Route</div>
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply49')">
+           <div class="replyText" id="reply49" data-title=" 𝐀𝐛𝐞𝐫𝐝𝐞𝐞𝐧 Route - Wed,Sat>"data-message="We have Delivery routes for Different areas. In your area, we are Delivering on Wednesday and Saturday."> 𝐀𝐛𝐞𝐫𝐝𝐞𝐞𝐧 Route </div>
+
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply50')">
+           <div class="replyText" id="reply50" data-title=" Say 🛃 confirm order 💸>"data-message="Apologies. Please respond to confirmation team about tomorrow's delivery as order is unconfirmed. Thank you.">Say 🛃 confirm order 💸</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply51')">
+           <div class="replyText" id="reply51" data-title="2PM Confirmation🚧>"data-message="Hi, I apologize for any inconvenience caused. The confirmation team has notified me that your order was not confirmed before 2pm. If you would still like to receive your delivery, may I rebook your order?.">2PM Confirmation🚧</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply52')">
+           <div class="replyText" id="reply52" data-title="Order Cancellation Inquiry 🛡️ >"data-message="We noticed your order was canceled. Did something happen, or would you like to rebook or make changes to the design? Let us know!.">Order Cancellation Inquiry 🛡️</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply53')">
+           <div class="replyText" id="reply53" data-title="Cancellation Reason Request ☂️ >" data-message="Could you please let us know the reason for canceling the order? This information will help us improve our services. Thank you.">Cancellation Reason Request ☂️</div>
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply54')">
+           <div class="replyText" id="reply54" data-title="van Broken >"data-message="We sincerely apologize for the delay. Unfortunately, our delivery van broke down and couldn't be repaired. Could we kindly request to reschedule for Tuesday? We are truly sorry for any inconvenience this may have caused.">van Broken </div>
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply55')">
+           <div class="replyText" id="reply55" data-title="Driver Issue 👻>" data-message="We apologize for the inconvenience. Due to family issues, our driver is unavailable. If it's possible, could we reschedule for Tuesday? Thank you for your understanding.">Driver Issue 👻</div>
+
+</div>
+
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply56')">
+           <div class="replyText" id="reply56" data-title="Delivery Day Reminder >"data-message="Hello from the Bed Company! Today is your scheduled delivery day. Please keep your phone handy, as our driver will give you a call approximately 30 minutes before arrival. Remember to pick up the phone promptly to ensure smooth delivery. Thank you!">Delivery Day Reminder</div>
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply57')">
+           <div class="replyText" id="reply57" data-title="Future Orders Welcome 🦕 >"data-message="If you need more beds in the future, feel free to message us here. We're always happy to assist you. Also, if you're interested, I can send you more designs to explore. Just let me know!">Future Orders Welcome 🦕</div>
+
+
+
+</div>
+
  
 
- <button style="background-color: #63003c;" class="button button-5row kb-source fa-icon">
-         Confirmation 💸?
-          <p class="hidden" id="l-text"
-            data-english="Have you received your bed?"
-      
-      ></p>  </button>
-        
 
-       <button style="background-color: #b35100;" class="button button-7row kb-source fa-icon"  >
-        Monday<p class="hidden" id="l-text" 
-          data-english="Delivery will be on Monday" ></p>  </button>
-       
-        <button style="background-color: #b35100;" class="button button-7row kb-source fa-icon"  >
-        Tuesday<p class="hidden" id="l-text" 
-          data-english="Delivery will be on Tuesday" ></p>  </button>
-       
-        <button style="background-color: #b35100;" class="button button-7row kb-source fa-icon"  >
-        Wednesday<p class="hidden" id="l-text" 
-          data-english="Delivery will be on Wednesday" ></p>  </button>
-         
-        <button style="background-color: #b35100;" class="button button-7row kb-source fa-icon"  >
-        Thursday<p class="hidden" id="l-text" 
-          data-english="Delivery will be on Thursday"></p>  </button> 
-    
-        <button style="background-color: #b35100;" class="button button-7row kb-source fa-icon"  >
-        Friday<p class="hidden" id="l-text" 
-          data-english="Delivery will be on Friday" ></p>  </button>
-           
-        <button style="background-color: #b35100;" class="button button-7row kb-source fa-icon"  >
-        Saturday<p class="hidden" id="l-text" 
-          data-english="Delivery will be on Saturday" ></p>  </button>
-      
-        <button style="background-color: #b35100;" class="button button-7row kb-source fa-icon"  >
-        Sunday<p class="hidden" id="l-text" 
-          data-english="Delivery will be on Sunday" 
-       ></p>  </button>
-         
-       <button style="background-color: #01452c" class="button button-5row kb-source fa-icon"  >
-        Tomorow confirmtion
 
+  <div class="replyContainer" onclick="copyToClipboard('reply59')">
+           <div class="replyText" id="reply59" data-title="Possible Delivery Delays 🦄 >"data-message="Deliveries can occasionally be delayed due to factors like traffic or driver breaks, typically between 9:00 AM and 5:00 PM. We aim to minimize any inconvenience. If you have concerns, feel free to reach out. Thanks!">Possible Delivery Delays 🦄</div>
+
+</div>
+
+
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply60')">
+           <div class="replyText" id="reply60" data-title="🌻 Bed Designs Attached 🌻>"data-message="I've attached some of our best bed designs for you to check out. Please let me know which ones you like or if you have any questions. I'm here to help you find the perfect bed. Looking forward to assisting you!">🌻 Bed Designs Attached 🌻</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply61')">
+           <div class="replyText" id="reply61" data-title="Design Unavailability Notice 🎶>"data-message="That specific design is no longer available due to customer feedback, rest assured that the designs I sent you are of the highest quality and durability.">Design Unavailability Notice 🎶</div>
+
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply62')">
+           <div class="replyText" id="reply62" data-title="Future Support Offered 🦕 >"data-message="Not a problem at all! If you ever need anything in the future, don't hesitate to reach out. Have a great day!">Future Support Offered 🦕</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply63')">
+           <div class="replyText" id="reply63" data-title="Seller Pricing Awareness 💸>"data-message="It seems the seller may be new and unfamiliar with our pricing structure. However, at this price, it's important to consider that we have to cover costs such as paying our bed manufacturer staff, as well as covering expenses like driver wages and fuel.">Seller Pricing Awareness 💸</div>
+
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply64')">
+           <div class="replyText" id="reply64" data-title=" Ready When You Are 🎀>"data-message="Thank you for letting us know. Whenever you're ready, just let us know, and we'll be happy to assist you. If you have any questions or need further information in the meantime, feel free to reach out.">Ready When You Are 🎀</div>
+
+
+</div>
+
+  <div class="replyContainer" onclick="copyToClipboard('reply65')">
+           <div class="replyText" id="reply65" data-title="Ask Postcode 2nd time 💫>"data-message="Hello! I understand you might be occupied at the moment. Whenever you get a chance, could you please provide your postcode? This will help us ensure smooth delivery arrangements for you. Thank you!">Ask Postcode 2nd time 💫</div>
+
+</div>
+
+
+  <div class="replyContainer" onclick="copyToClipboard('reply66')">
+           <div class="replyText" id="reply66" data-title="IF Delivery Delays 🦖>"data-message="Your order is currently in transit for today's delivery. While we strive for timely delivery, please be aware that occasional delays may occur due to factors such as heavy traffic, the driver's meal break, or additional stops for other customers may cause minor delays. However, rest assured that we are committed to ensuring the prompt delivery of your order.
         
-<p class="hidden" id="l-text" 
-         data-english="Hi! I hope you are doing well! Tomorrow our confirmation will contact you by text/call, please reply on time. Please recheck your phone number.<br>Thank you" 
-       ></p> </button> 
-            
-        
-         <button  style="background-color: #0070c0;" class="button button5 kb-source fa-icon">
-            Please choose a color? 🌈🎨
-            <p class="hidden" id="l-text" 
-            data-english="We'd love to know your preference! Could you please choose a color from our selection? 🌈🎨" 
+Unfortunately, we are unable to facilitate a delivery today as all our vans are currently en route. However, we would be more than happy to schedule a delivery for tomorrow if you would like to proceed.">IF Delivery Delays 🦖</div>
+
+
+</div>
+ <div class="replyContainer" onclick="copyToClipboard('reply68')">
+           <div class="replyText" id="reply68" data-title=" 📞📦Factory will contact you 1 day before delivery. Reply before 2pm, thanks!>"data-mseeage="📞📦Factory will contact you 1 day before delivery. Reply before 2pm, thanks!">📞📦Factory will contact you 1 day before delivery. Reply before 2pm, thanks!</div>
+</div>
+</div>
              
-          
-          <button class="button button-3row kb-source fa-icon"  >
-        3D Mattress Verities ×͜×
-        <p class="hidden" id="l-text" 
-         data-english="Our 3D mattress, with a depth of 11 to 12 inches, is available in a variety of colors including Black, Grey, Silver, Cream, Suede, Mayfair, and Richmond. Experience a unique and customizable sleep experience with its adjustable air pressure and built-in 3D structures." 
-         ></p>
-         </button> 
-        
-          
-          <button class="button button-3row kb-source fa-icon"  >
-        3D Mattress Specs 🎀 
-        <p class="hidden" id="l-text" 
-         data-english="Our 3D mattress typically has a depth of 11 to 12 inches and is designed to provide a unique sleeping experience with built-in three-dimensional structures. These structures, along with adjustable air pressure, allow for personalized support and comfort, helping to reduce pressure points and regulate temperature." 
-             ></p>
-      </button> 
-        
-        
-        
-        <button style="background-color: #002e2c;" class="button button-3row kb-source fa-icon"  >
-        Orthophedic Mattress Specs 💸
-          <p class="hidden" id="l-text" 
-         data-english="
-Our 8-inch deep orthopedic mattress offers exceptional support for back pain and ensures proper spinal alignment. Enjoy ultimate orthopedic sleep support in a compact and convenient design." 
-        ></p> </button>
-        
-        
-        
-         <button style="background: linear-gradient(to right, #009900 0%, #0000ff 100%);" class="button button-3row kb-source fa-icon"  >
-        &#163;25 delivery charges 💸
-        <p class="hidden" id="l-text" 
-         data-english="Unfortunately, we do not deliver to your area. There is a &#163;25 delivery charge for orders outside of our service area." 
-             ></p>
-         </button> 
+<h3 style="background: #4b005e;" class="heading-top">👑  ツ 🛡 『 💛 𝙏𝙝𝙖𝙣𝙠 𝙮𝙤𝙪 💛 』   ツ ☂  👑</h3>
 
-
-         <button style="background-color: #006d5e;" class="button button-3row  fa-icon"  >
-        Drawers Charges IRELAND 👻 
-            <p class="hidden" id="l-text" 
-         data-english="Drawers are optional:<br>2x drawer &#163;40 extra<br>4x drawer &#163;80 extra" 
-            ></p>
-           </button> 
-
-
-          <button style="background-color: #43344a" class="button button-3row kb-source fa-icon" >
-        &#163;5 discount bed 🦖 
-        <p class="hidden" id="l-text" 
-         data-english="Our prices are already very competitive, however as you are a new customer we are happy to offer you a &#163;5 discount on each bed" 
-         </p></button> 
-          
-             <button style="background-color: #45191c" class="button button-4row kb-source fa-icon"  >
-       🥹 #Number Issue 🥹
-        <p class="hidden" id="l-text" 
-        data-english="I understand your concern, but having a phone number is important for a few reasons. Firstly, our driver needs to be able to contact you before delivery to ensure that you're available to receive the order. Additionally, our factory may need to contact you if there are any issues with your order." 
-       
-            <button style="background-color: #45191c" class="button button-4row kb-source fa-icon"  >
-        Today/Tomorrow delivery ☕
-        <p class="hidden" id="l-text" 
-         data-english="We strive for fast and efficient delivery, but can't offer same/next-day service. Our standard delivery is in 2 days" 
-        ></p> </button> 
-          <button style="background-color: #45191c" class="button button-4row kb-source fa-icon"  >
-      💸 Payment Plan&#9940;
-
-        <p class="hidden" id="l-text" 
-        data-english="At this time, we do not offer payment plans for our products. However, we do accept cash on delivery, and we can work with you to schedule a convenient delivery time" 
-        
- <button style="background-color: #45191c" class="button button-4row kb-source fa-icon"  >
-       💫 Replace/Refund&#9989;
-         <p class="hidden" id="l-text" 
-         data-english="Our policy is to offer a replacement or a refund for any damaged items during transit. Please contact us as soon as possible if you receive a damaged item, and we will work with you to resolve any issues. Photos of the damaged item and packaging may be required to process your claim." 
-        
-          
-        
-        
-          <button style="background-color: #634400;" class="button button-3row kb-source fa-icon"  >
-      
-        𝐏𝐨𝐫𝐭𝐬𝐦𝐨𝐮𝐭𝐡 Route - Tue,Fri
-        <p class="hidden" id="l-text" 
-         data-english="We have Delivery routes for Different areas. In your area, we are Delivering on Tuesday and Friday" 
-            ></p>
-         </button> 
-        
-          
-          <button style="background-color: #634400;" class="button button-3row kb-source fa-icon"  >
-      
-        𝐂𝐨𝐫𝐧𝐰𝐚𝐥𝐥 Route - Thu,Sun
-
-        <p class="hidden" id="l-text" 
-         data-english=" We have Delivery routes for Different areas. In your area, we are Delivering on Thursday and Sunday" 
-            ></p>
-         </button> 
-        
-        <button style="background-color: #634400;" class="button button-3row kb-source fa-icon"  >
-       
-        𝐀𝐛𝐞𝐫𝐝𝐞𝐞𝐧 Route - Wed,Sat
-       
-         <p class="hidden" id="l-text" 
-         data-english="We have Delivery routes for Different areas. In your area, we are Delivering on Wednesday and Saturday" 
-       ></p> </button>
-          
-        
-          
-        
-        
-        
-        
-        
-          
-            <button style="background-color: #008797" class="button button-2row kb-source fa-icon">
-        Say 🛃 confirm order 💸
-        <p class="hidden" id="l-text" 
-         data-english="Apologies. Please respond to confirmation team about tomorrow's delivery as order is unconfirmed. Thank you." 
-        ></p></button> 
-          <button style="background-color: #012e33" class="button button-2row kb-source fa-icon">
-        2PM Confirmation🚧
-         <p class="hidden" id="l-text" 
-         data-english="Hi, I apologize for any inconvenience caused. The confirmation team has notified me that your order was not confirmed before 2pm. If you would still like to receive your delivery, may I rebook your order?" 
-        
-          <button style="background-color: #FF0101" class="button button-3row kb-source fa-icon" onclick="copyText('We sincerely apologize for the delay. Unfortunately, our delivery van broke down and couldn\'t be repaired. Could we kindly request to reschedule for ', '? We are truly sorry for any inconvenience this may have caused.')">Van Broken</button>
-          
-        
-        <button style="background-color: #7A1E1E" class="button button-3row kb-source fa-icon" onclick="copyText('We apologize for the inconvenience. Due to family issues, our driver is unavailable. If it\'s possible, could we reschedule for ', '? Thank you for your understanding.')">Driver Issue</button>
-          
-          
-         <button style="background-color: #FF8181" class="button button-3row kb-source fa-icon" onclick="copyText('Hi, we won\'t be able to deliver your order tomorrow due to a shortage of orders. Can we reschedule for ', ' instead? We apologize for the inconvenience and appreciate your understanding.')">Not Enough Orders</button>
-        
-       
-            
-             <button class="button button-3row kb-source fa-icon" onclick="copyDataWithCompleteDate('*Delivery Schedule for ', '*\n\nGood morning from Bed Company! Our confirmation team will contact you today. Please reply with *Confirmed* to proceed as scheduled, or message here for any changes. Thank you!')">Schedule Confirmation Reminder</button>
-            
-          
-         
-          
-          
-           <button class="button button-3row kb-source fa-icon"  >
-        Order Cancellation Inquiry 🛡️ 
-<p class="hidden" id="l-text" 
-         data-english="We noticed your order was canceled. Did something happen, or would you like to rebook or make changes to the design? Let us know!" 
-            ></p>
-         </button> 
-          
-           <button class="button button-3row kb-source fa-icon"  >
-         Cancellation Reason Request ☂️  
-<p class="hidden" id="l-text" 
-         data-english="Could you please let us know the reason for canceling the order? This information will help us improve our services. Thank you." 
-            ></p>
-             
-               <button class="button button-3row kb-source fa-icon"  >
-       Sincere Apology Offered 🐝 
-<p class="hidden" id="l-text" 
-         data-english="I apologize for the poor experience and the inconvenience caused. Your feedback is important, and I take it seriously. I understand your frustration, and I am genuinely sorry for any disrespect you felt. If there&#8217;s anything I can do to make this right, please let me know. Your satisfaction is our priority.
-" 
-            ></p>
-         </button> 
-             
-                        <button class="button button-3row kb-source fa-icon"  >
-       Contacted Multiple Numbers 👻 
-<p class="hidden" id="l-text" 
-         data-english="I apologize for the confusion. We understand how frustrating it can be to receive messages from multiple numbers. Rest assured, it's not our intention to cause any suspicion. We're streamlining our communication channels to provide better service. If there's anything specific you'd like to address or clarify, please let us know, and we'll ensure a smooth process from here on out." 
-            ></p>
-                          
-                          
-                      <button class="button button-3row kb-source fa-icon"  >
-        Delivery Day Reminder 👑  
-<p class="hidden" id="l-text" 
-         data-english="Hello from the Bed Company! Today is your scheduled delivery day. Please keep your phone handy, as our driver will give you a call approximately 30 minutes before arrival. Remember to pick up the phone promptly to ensure smooth delivery. Thank you!" 
-            ></p>               
-             
-             
-                         <button class="button button-3row kb-source fa-icon"  >
-       Future Orders Welcome 🦕 
-<p class="hidden" id="l-text" 
-         data-english="If you need more beds in the future, feel free to message us here. We're always happy to assist you. Also, if you're interested, I can send you more designs to explore. Just let me know!" 
-            ></p>      
-                            <button class="button button-3row kb-source fa-icon"  >
-        Bed Designs Available 🐝 
-<p class="hidden" id="l-text" 
-         data-english="We provide a wide array of bed designs and mattresses. If you, your family, or friends need anything in the future, please feel free to reach out. Thank you for considering us! For quick assistance, here's our WhatsApp number: +44 7979 512739." 
-            ></p>      
-                               <button class="button button-3row kb-source fa-icon"  >
-      Possible Delivery Delays 🦄 
-<p class="hidden" id="l-text" 
-         data-english="Deliveries can occasionally be delayed due to factors like traffic or driver breaks, typically between 9:00 AM and 5:00 PM. We aim to minimize any inconvenience. If you have concerns, feel free to reach out. Thanks!" 
-            ></p>      
-                                 
-                                  <button class="button button-3row kb-source fa-icon"  >
-        🌻 Bed Designs Attached 🌻
-<p class="hidden" id="l-text" 
-         data-english="I've attached some of our best bed designs for you to check out. Please let me know which ones you like or if you have any questions. I'm here to help you find the perfect bed. Looking forward to assisting you!" 
-            ></p>      
-                                     <button class="button button-3row kb-source fa-icon"  >
-      Design Unavailability Notice 🎶
-<p class="hidden" id="l-text" 
-         data-english="That specific design is no longer available due to customer feedback, rest assured that the designs I sent you are of the highest quality and durability." 
-            ></p>      
-                                        <button class="button button-3row kb-source fa-icon"  >
-     Future Assistance Available ❦❀
-<p class="hidden" id="l-text" 
-         data-english="You're welcome! If you have any questions or need assistance in the future, feel free to reach out. Have a fantastic day!" 
-            ></p>      
-                                           <button class="button button-3row kb-source fa-icon"  >
-        Future Support Offered 🦕 
-<p class="hidden" id="l-text" 
-         data-english="Not a problem at all! If you ever need anything in the future, don't hesitate to reach out. Have a great day!
-" 
-            ></p>      
-                                             
-                  <button class="button button-3row kb-source fa-icon"  >
-     Seller Pricing Awareness 💸
-<p class="hidden" id="l-text" 
-         data-english="It seems the seller may be new and unfamiliar with our pricing structure. However, at this price, it's important to consider that we have to cover costs such as paying our bed manufacturer staff, as well as covering expenses like driver wages and fuel." 
-            ></p>      
-                         <button class="button button-3row kb-source fa-icon"  >
-        Ready When You Are 🎀 
-<p class="hidden" id="l-text" 
-         data-english="Thank you for letting us know. Whenever you're ready, just let us know, and we'll be happy to assist you. If you have any questions or need further information in the meantime, feel free to reach out." 
-            ></p>      
-                                <button class="button button-3row kb-source fa-icon"  >
-        Ask Postcode 2nd time 💫 
-<p class="hidden" id="l-text" 
-         data-english="Hello! I understand you might be occupied at the moment. Whenever you get a chance, could you please provide your postcode? This will help us ensure smooth delivery arrangements for you. Thank you!" 
-            ></p>      
-                                       <button class="button button-3row kb-source fa-icon"  >
-         Sincere Apology Offered 🦄 
-<p class="hidden" id="l-text" 
-         data-english="Hi! I hope you are doing well! Tomorrow our confirmation will contact you by text/call, please reply on time. Please recheck your phone number.<br>Thank you" 
-            ></p>      
-             
-             
-          
-                                       <button class="button button-3row kb-source fa-icon"  >
-     Encouraging to Act 👻   
-<p class="hidden" id="l-text" 
-         data-english="Please don't let a great deal slip away for just &#163;5. This offer ensures you get the quality and comfort you need. " 
-            ></p>      
-                                         
-                                         
-                                       <button class="button button-3row kb-source fa-icon"  >
-     Costs Covered Explanation 🐝 
-<p class="hidden" id="l-text" 
-         data-english="I understand your situation. However, please note that we have already manufactured the bed, paid the driver, covered fuel costs, and paid the manufacturer. If there's anything we can do to assist you or make adjustments, please let us know. We're here to help.
-" 
-            ></p>      
-
-            
-            <button class="button button-5row kb-source fa-icon"  >
- IF Delivery Delays 🦖 
-
-          <p class="hidden" id="l-text" 
-         data-english="Your order is currently in transit for today's delivery. While we strive for timely delivery, please be aware that occasional delays may occur due to factors such as heavy traffic, the driver's meal break, or additional stops for other customers may cause minor delays. However, rest assured that we are committed to ensuring the prompt delivery of your order." 
-  ></p> </button> 
-            
-         
-        
-        
-            
-            <button  class="button button-5row kb-source fa-icon">
-              Next Day 🖤  🚐
-              <p class="hidden" id="l-text" 
-              data-english="Unfortunately, we are unable to facilitate a delivery today as all our vans are currently en route. However, we would be more than happy to schedule a delivery for tomorrow if you would like to proceed." 
-                 
-         ></p>  </button>
-        
-        
-          
-          
-          
-        
-        
-            <button  style="background-color: #260085;" class="button button5 kb-source fa-icon">
-              📞📦 Factory will contact you 1 day before delivery. Reply before 2pm, thanks!
-                  <p class="hidden" id="l-text" 
-         data-english="📞📦Factory will contact you 1 day before delivery. Reply before 2pm, thanks!" 
-            
-              ></p>  </button>
-        
-
-        
-             
-<h3 style="background: #4b005e;" class="heading-top">👑  ツ 🛡️ 『 💛 𝙏𝙝𝙖𝙣𝙠 𝙮𝙤𝙪 💛 』   ツ ☂️  👑</h3>
-
-
-
-    <div id="preloader-wrapper">
+ <div id="preloader-wrapper">
       <div class="container-preloader">
         <div class="preloader">
-          <div id="loading">ᴹᴿ ᴀᴠᴇɴᴜᴇ  </div>
+          <div id="loading">ᴹᴿᴀᴠᴇɴᴜᴇ</div>
           <div class="progress-1"></div>
-         
-            <p class="center"> ⎝⎝✧🅰🆅🅴🅽🆄🅴 👻✧⎠⎠ </p></div>
+          <div id="additional-info"> <p class="center">.</p>
+              <p class="center">⎝⎝✧🅰🆅🅴🅽🆄🅴 👻✧⎠⎠ </p></div>
         </div>
       </div>
     </div>
+  <link rel="stylesheet" href="./ᴹᴿᴀᴠᴇɴᴜᴇ_files/font-awesome.min.css">
+     <!-- Add more replyContainers for other preset messages here -->
+    </div>
+
+
   
-  
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-              
-              
-
-
-
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
- <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-
-          
      
 
+    <div id="notification">copied!</div>
 
- <script> // Check if user is authenticated
-   firebase.auth().onAuthStateChanged(function(user) {
-     if (!user) {
-       // User is not signed in
-       // Redirect to login page
-       window.location.href = 'index.html';
-     }
-   });
-   </script>
-   
+    <script>
+        function copyToClipboard(replyId) {
+            const replyText = document.getElementById(replyId);
+            const title = replyText.getAttribute("data-title");
+            const message = replyText.getAttribute("data-message");
 
-   <script>
-    // Function to update the text of all paragraphs based on the selected language
-    function updateParagraphs(selectedLanguage) {
-      const paragraphs = document.querySelectorAll('.button .hidden');
-  
-      paragraphs.forEach(paragraph => {
-        // Get the text from the data attribute
-        let text = paragraph.getAttribute("data-" + selectedLanguage);
-  
-        // Replace <br> tags with line breaks
-        text = text.replace(/<br>/g, '\n');
-  
-        // Set the paragraph text
-        paragraph.innerText = text;
-      });
-    }
-  
-    // Function to set the clipboard text based on the selected language
-    function setClipboardText(selectedLanguage, text) {
-      const buttons = document.querySelectorAll('.fullbed');
-      buttons.forEach(button => {
-        const buttonText = button.innerText;
-        if (buttonText === text) {
-          const textToCopy = button.getAttribute("data-" + selectedLanguage);
-          if (textToCopy) {
-            setClipboard(textToCopy);
-          }
-        }
-      });
-    }
-  
-    // Add an event listener to the language dropdown to update the paragraphs
-    document.getElementById("language").addEventListener("change", function () {
-      const selectedLanguage = document.getElementById("language").value;
-      updateParagraphs(selectedLanguage);
-  
-      // Save the selected language in local storage
-      localStorage.setItem("selectedLanguage", selectedLanguage);
-    });
-  
-    // Check if a language preference exists in local storage
-    const storedLanguage = localStorage.getItem("selectedLanguage");
-  
-    // Set the dropdown to the stored language or default to English
-    if (storedLanguage) {
-      document.getElementById("language").value = storedLanguage;
-      updateParagraphs(storedLanguage);
-    } else {
-      // If no language is stored, default to English
-      document.getElementById("language").value = "english";
-      updateParagraphs("english");
-    }
-  
-    
-  </script>
+            const textarea = document.createElement("textarea");
+            textarea.value = message;
+            document.body.appendChild(textarea);
 
+            textarea.select();
+            document.execCommand("copy");
 
+            document.body.removeChild(textarea);
 
-
-
-
-
-<script>
-  function notify(type, message) {
-  (() => {
-    let n = document.createElement("div");
-    let id = Math.random().toString(36).substr(2, 10);
-    n.setAttribute("id", id);
-    n.classList.add("notification", type);
-    n.innerText = message;
-    document.getElementById("notification-area").appendChild(n);
-    setTimeout(() => {
-      var notifications = document.getElementById("notification-area").getElementsByClassName("notification");
-      for (let i = 0; i < notifications.length; i++) {
-        if (notifications[i].getAttribute("id") == id) {
-          notifications[i].remove();
-          break;
-        }
-      }
-    }, 1000);
-  })();
-}
-
-function copyToClipboard(text) {
-  var tempTextarea = document.createElement('textarea');
-  tempTextarea.style.position = 'fixed';
-  tempTextarea.style.opacity = 0;
-
-  // Replace line breaks with actual line breaks
-  var textWithLineBreaks = text.replace(/<br\s*[\/]?>/gi, '\n');
-
-  tempTextarea.value = textWithLineBreaks;
-
-  document.body.appendChild(tempTextarea);
-
-  tempTextarea.select();
-  document.execCommand('copy');
-
-  document.body.removeChild(tempTextarea);
-
-  notify('success', 'Successful');
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var buttons = document.querySelectorAll('.kb-source');
-buttons.forEach(function(button) {
-  var copyIcon = document.createElement('i');
-  copyIcon.classList.add('fa', 'fa-copy');
-  button.appendChild(copyIcon);
-
-  button.addEventListener('click', function(event) {
-    event.stopPropagation();
-    var paragraph = this.querySelector('p.hidden');
-    var paragraphText = paragraph ? paragraph.innerHTML.trim().replace(/<br>/g, '\n') : '';
-    if (paragraphText) {
-      copyToClipboard(paragraphText);
-    }
-  });
-});
-
-// Disable pointer events on the notification container while animating
-document.addEventListener("animationstart", function(event) {
-  if (event.animationName === "showNotification") {
-    var notification = event.target;
-    notification.parentNode.style.pointerEvents = "none";
-  }
-});
-
-// Enable pointer events on the notification container after animation ends
-document.addEventListener("animationend", function(event) {
-  if (event.animationName === "showNotification") {
-    var notification = event.target;
-    setTimeout(() => {
-      notification.parentNode.style.pointerEvents = "auto";
-    }, 1000);
-  }
-});
-
-
-
-
-
-          </script>
-   
-                <style> 
-                #notification-area {
-    position:fixed;
-    top:-20px;
-    left:20px;
-    
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-  }
-  #notification-area .notification {
-    position:relative;
-    padding:15px 45px;
-    background:#111;
-    color:#f5f5f5;
-    
-    font-size:14px;
-    font-weight:600;
-    border-radius:5px;
-    margin:5px 0px;
-    opacity:0;
-    left:200px;
-    animation:showNotification 500ms ease-in-out forwards;
-  }
-  @keyframes showNotification {
-    to {
-      opacity:1;
-      left:0px;
-    }
-  }
-  #notification-area .notification.success {
-    background:#bd0000;
-  }
-
-  .fa-icon {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .fa-icon i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-            }
-
-            .button,
-.fa-icon,
-.notification {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  border-radius: 8px;
-}
-
-.containereu {
- 
-  margin: -20px auto;
-  max-width: 1150px;
-  }
-
-.container {
- 
-margin: 15px auto;
-max-width: 1150px;
-}
-body, .main-wrapper {background-color: #121212; user-select: none; font-family: Arial, sans-serif;}
-
-
-.hidden {
-  display: none;
-}
-
-.topbar {
-      position: fixed;
-      top: 0;
-    }
-    
-    .btn {
-      border: 1px solid rgb(31, 7, 7);
-      outline: none;
-      padding: 7px 10px;
-      background-color: #411;
-      color: white;
-      cursor: pointer;
-      font-size: 18px;
-      border-radius: 7px;
-    }
-    
-    .active,
-    .btn:hover {
-      background-color: #bd0000;
-      color: white;
-    }
-    
-    @media screen and (max-width: 480px) {
-      .btn {
-        padding: 10px 11px;
-        font-size: 13px;
-        width: 23%;
-      }
-    }
-
-   
-    .everydayfree {
-      position: relative;
-    }
-  
-    .everydayfree::after {
-      content: "Everyday/Free Delivery";
-      font-size: 0.8em;
-     
-      top: -1.1em;
-      left: 30em;
-      color: #75b6ff;
-    }
-    
-     @media only screen and (max-width: 600px) {
-          .everydayfree::after {
-      font-size: 0.7em;
-      position: absolute;
-      top: -1.0em;
-      left: 2em;
-    }
-      }
-    
-    .daylong {
-      position: relative;
-    }
-  
-    .daylong::after {
-      content: "Everyday/Long Route";
-      font-size: 0.8em;
-     
-      top: -1.1em;
-      left: 2em;
-      color: #ff7575;
-    }
-    
-     @media only screen and (max-width: 600px) {
-          .daylong::after {
-      font-size: 0.7em;
-      position: absolute;
-      top: -1.3em;
-      left: 2em;
-    }
-      }
-    
-    
-    
-    .portsmouthr {
-      position: relative;
-    }
-  
-    .portsmouthr::after {
-      content: "Tue and Fri /Long Route";
-      font-size: 0.8em;
-    
-      top: -1.1em;
-      left: 2em;
-      color: #75ff87;
-    }
-    
-     @media only screen and (max-width: 600px) {
-          .portsmouthr::after {
-      font-size: 0.7em;
-      position: absolute;
-      top: -1.3em;
-      left: 2em;
-    }
-      }
-
-      .n-ireland {
-        position: relative;
-      }
-    
-      .n-ireland::after {
-        content: "3 to 5 Days EST Delivery";
-        font-size: 0.8em;
-        
-        top: -1.1em;
-        left: 2em;
-        color: #ff8800;
-      }
-      
-       @media only screen and (max-width: 600px) {
-            .n-ireland::after {
-        font-size: 0.7em;
-        position: absolute;
-        top: -1.3em;
-        left: 2em;
-      }
+            showNotification(title);
         }
 
-    
-    .cornwallr {
-      position: relative;
-    }
-  
-    .cornwallr::after {
-      content: "Thur and Sun /Long Route";
-      font-size: 0.8em;
-      
-      top: -1.1em;
-      left: 2em;
-      color: #75ff87;
-    }
-    
-     @media only screen and (max-width: 600px) {
-          .cornwallr::after {
-      font-size: 0.7em;
-      position: absolute;
-      top: -1.3em;
-      left: 2em;
-    }
-      }
-  
-      .aberdeenr {
-      position: relative;
-    }
-  
-    .aberdeenr::after {
-      content: "Wed and Sat /Long Route ";
-      font-size: 0.8em;
-     
-      top: -1.1em;
-      left: 2em;
-      color: #75ff87;
-    }
-    
-     @media only screen and (max-width: 600px) {
-          .aberdeenr::after {
-      font-size: 0.7em;
-      position: absolute;
-      top: -1.3em;
-      left: 2em;
-    }
-      }
-    
-       .Invernessr {
-      position: relative;
-    }
-  
-    .Invernessr::after {
-      content: "Wed & Sat /20 Extra from LDR";
-      font-size: 0.8em;
-     
-      top: -1.1em;
-      left: 2em;
-      color: #ff2414;
-    }
-    
-    
-     @media only screen and (max-width: 600px) {
-          .Invernessr::after {
-      font-size: 0.7em;
-      position: absolute;
-      top: 5.3em;
-      left: 2em;
-    }
-      }
+        function showNotification(title) {
+            const notification = document.getElementById("notification");
+            notification.innerText = `copied: ${title}`;
+            notification.style.animation = 'none'; // Reset animation
+            void notification.offsetWidth; // Trigger reflow to restart animation
+            notification.style.animation = null;
 
+            notification.style.opacity = 1;
+            notification.style.visibility = 'visible';
 
-      #myTable {
-        border-collapse: collapse;
-        width: 100%;
-        border: 1px solid #ddd;
-        font-size: 18px;
-        cursor: pointer;
-      }
-    
-      #myTable th,
-      #myTable td {
-        color: #ebebeb;
-        text-align: left;
-        padding: 12px;
-        border-right: 1px solid #ddd; /* Add border between columns */
-      }
-    
-      #myTable td:last-child {
-        border-right: none; /* Remove border on last column */
-      }
-    
-      #myTable tr {
-        border-bottom: 1px solid #ddd;
-        background-color: #121212;
-      }
-    
-      .selected {
-        background-color: black;
-        font-weight: bold;
-        color: #fff;
-        outline: 3px solid red;
-        outline-offset: -2px;
-      }
-    
-      #myTable tr:hover {
-        background-color: black;
-      }
-    
-      #myTable tr.header {
-        background-color: black;
-      }
-    
-      .trboard {
-        outline: 3px solid white;
-        outline-offset: -3px;
-        font-weight: bold;
-      }
-    
-      #myInput {
-        background-image:url('https://res.cloudinary.com/dc1q32wzt/image/upload/v1685751275/search_eeh8e2.png');
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
-        background-color: #121212;
-        color: white;
-        width: 95%;
-        font-size: 16px;
-        padding: 12px 20px 12px 40px;
-        border: 1px solid #ddd;
-    
-        
-        
-        left: 2.5%;
-      
-      }
-
-      @media only screen and (max-width: 600px) {
-  #myInput {
-    width: 81%;
-
-    font-size: 19px;
-    padding: 12px 20px 12px 40px;
-
-    top: auto;
-    left: auto;
-    margin-bottom: -15px;
-    z-index: initial;
-  }
-}
-
-  
-      /* Adjust the height and width of the second column */
-    #myTable td:nth-child(2),
-    #myTable th:nth-child(2) {
-      width: 250px; /* Set the desired width */
-      height: 25px; /* Set the desired height */
-    }
-    
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      height: auto;
-    }
-    
-    .heading-top {
-      color: white;
-      display: flex;
-      justify-content: center;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      padding: 2px;
-      border-radius: 5px;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .container-menu {
-      margin: -4px auto;
-      max-width: 1150px;
-     
-  }
-
-  .container-table {
-      margin-top: 0px;
-      margin-right: auto;
-      margin-bottom: 25px;
-      margin-left: auto;
-      max-width: 1150px;
-      overflow: auto;
-       margin-bottom: 12px;
-  }
-  
-  
-
-
-     .buttonp {
-        border: 1px solid rgb(31, 7, 7);
-        outline: none;
-        padding: 7px 10px;
-        background-color: #411;
-        color: white;
-        cursor: pointer;
-        font-size: 18px;
-        border-radius: 7px;
-    }
-    
-    .active,
-    .buttonp:hover {
-        background-color: #bd0000;
-        color: white;
-    }
-    
-    @media screen and (max-width: 480px) {
-        .buttonp {
-            padding: 10px 11px;
-            font-size: 13px;
-            width: 23%;
+            setTimeout(() => {
+                notification.style.opacity = 0;
+                notification.style.visibility = 'hidden';
+            }, 2000); // 2000 milliseconds (2 seconds) for the notification to fade out
         }
-    }
-
-    #scroll-to-top {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 99;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      border: none;
-      border-radius: 50%;
-      background: #ff1919;
-      color: #fff;
-      font-size: 20px;
-      opacity: 0.7;
-      transition: opacity 0.3s;
-  }
-
-  #scroll-to-top:hover {
-      background: #d60000;
-  }
-          </style>
-          
-          
-           <style>
-             .button {
-    --clr: #000;
-    --outline: 2px solid white;
-     border: 1px solid var(--clr);
-    background: var(--clr);
-    padding: 6px 32px;
-    text-align: left;
-    font-size: 16px;
-    margin: 2.1px 2px;
-    transition: outline-offset 200ms ease;
-    cursor: pointer;
-    color: white;
-    border: 1.5px solid #555555;
-  }
-  
-  .button:hover,
-  .button:focus {
-    outline: 3px solid white; 
-    outline-offset: -6px; 
-    color: rgb(255, 18, 18);
-  }
-  
-  
-  .button5 {width: 99.5%;}
-  .button-7row {width: 13.9%;}
-    .button-2row {width: 49.4%;}
-    .button-3row {width: 32.7%;}
-    .button-4row {width: 24.3%;}
-    .button-5row {width: 19.34%;}
-    
-      
-    @media screen and (max-width: 480px) {
-      .button {width: 95%;}
-
-      
-      }
-
-      .button-florida {
-        background-color: #000000;
-        color: white;
-        padding: 12px 32px;
-        width: 47.2%;
-        text-align: left;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        border: 2px solid #555555;
-      }
-      .button-florida:hover {
-        background-color: #f06318;
-        color: white;
-      }
-      
-      @media screen and (max-width: 480px) {
-          .button-florida {
-       
-        width: 95%;
-       
-      }}
-    
-           </style>
-          
-          
-           <style>
-             .container-preloader {
-    overflow: hidden; /* Hide scrollbars while preloader is displayed */
-  }
-
-  .preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999; /* Increase the z-index value */
-    color: #411;
-    font-family: Consolas, Courier, monospace;
-    font-size: 80px;
-    text-shadow: 0 0 25px #411;
-    flex-direction: column;
-  }
-  
-  #additional-info {
-    color: #bd0000;
-    margin-top: 30px;
-    font-size: 34px; /* Adjust the font size as desired */
-    text-align: center;
-  }
-  
-
-  .preloader-text {
-    margin-top: 20px;
-    font-size: 24px;
-    color: #bd0000;
-  }
-
-  .glow {
-    color: #f00;
-    text-shadow: 25px 25px 25px #f00;
-  }
-
-  span {
-    display: inline-block;
-    padding: 0 10px;
-  }
-  
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
-  .progress-1 {
-    margin-top: 20px;
-    width: 350px;
-    height: 10px;
-    background: linear-gradient(#700000 0 0) 0/0% no-repeat #f00;
-    animation: p1 2s infinite linear;
-  }
-  @keyframes p1 {
-    100% {
-      background-size: 100%;
-    }
-  }
-  
-           </style>
- 
-         <script>
-          var alphabet = [
-    "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
-  ];
-  var letter_count = 0;
-  var el = document.getElementById("loading");
-  var word = el.innerHTML.trim();
-  var finished = false;
-  var startTime = new Date().getTime(); // Track the start time
-  
-  el.innerHTML = "";
-  for (var i = 0; i < word.length; i++) {
-    el.innerHTML += "<span>" + word.charAt(i) + "</span>";
-  }
-  
-  function write() {
-    for (var i = letter_count; i < word.length; i++) {
-      var c = Math.floor(Math.random() * 36);
-      el.getElementsByTagName("span")[i].innerHTML = alphabet[c];
-    }
-    if (!finished) {
-      requestAnimationFrame(write);
-    }
-  }
-  
-  function inc() {
-    el.getElementsByTagName("span")[letter_count].innerHTML = word[letter_count];
-    el.getElementsByTagName("span")[letter_count].classList.add("glow");
-    letter_count++;
-    if (letter_count >= word.length) {
-      finished = true;
-      setTimeout(reset, 1500);
-    } else {
-      requestAnimationFrame(inc);
-    }
-  }
-  
-  function reset() {
-    letter_count = 0;
-    finished = false;
-    setTimeout(inc, 300);
-    setTimeout(write, 30);
-    var spans = el.getElementsByTagName("span");
-    for (var i = 0; i < spans.length; i++) {
-      spans[i].classList.remove("glow");
-    }
-  }
-  
-  // Delay hiding the preloader for a minimum of 3 seconds
-  var preloader = document.querySelector(".preloader");
-  var container = document.querySelector(".container-preloader");
-  
-  function hidePreloader() {
-    var currentTime = new Date().getTime();
-    var elapsedTime = currentTime - startTime;
-    if (elapsedTime >= 3000) {
-      preloader.style.animation = "fadeOut 0.5s ease";
-      setTimeout(function() {
-        preloader.style.display = "none";
-        document.body.style.overflow = "auto"; // Restore body overflow
-        container.style.display = "block"; // Show the website content
-      }, 500); // Fade out time
-    } else {
-      setTimeout(hidePreloader, 1000 - elapsedTime);
-    }
-  }
-  
-  window.addEventListener("load", function() {
-    document.body.style.overflow = "hidden"; // Hide body overflow
-    write();
-    setTimeout(inc, 1000); // Delay the completion of the animation after 3 seconds
-    hidePreloader(); // Start hiding the preloader after 3 seconds
-  });
-  
-  // Check if CSS is loaded after a certain delay
-  var cssLoadDelay = 2000; // Adjust the delay as needed
-  
-  setTimeout(function() {
-    var cssLoaded = false;
-    var sheets = document.styleSheets;
-    for (var i = 0; i < sheets.length; i++) {
-      if (sheets[i].href && !sheets[i].href.includes("data:text/css")) {
-        cssLoaded = true;
-        break;
-      }
-    }
-  
-    if (!cssLoaded) {
-      // CSS not loaded, hide everything
-      preloader.style.display = "none";
-      document.body.style.overflow = "hidden";
-    }
-  }, cssLoadDelay);
-  
-          </script>
-   
-
-         <style>
-        .notification23 {
-            position: fixed;
-            bottom: 35px;
-            left: 35px; /* Adjusted to be 30px from the left side */
-            background-color: red;
-            color: white;
-            padding: 25px;
-            border-radius: 25px;
-            display: none;
-            text-align: center;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .notification23.show {
-            opacity: 1;
-        }
-    </style>
-     <script>
-        let futureDay = '';
-
-        function getCurrentDateInPKT() {
-            const now = new Date();
-            const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const PKTOffset = 5 * 60 * 60000; // PKT is UTC+5
-            return new Date(utcTime + PKTOffset);
-        }
-
-        function initializeFutureDay() {
-            const options = { weekday: 'long' };
-
-            try {
-                const currentDate = getCurrentDateInPKT();
-
-                // Calculate the future date based on PKT
-                let futureDate = new Date(currentDate);
-                if (currentDate.getHours() >= 8) {
-                    futureDate.setDate(futureDate.getDate() + 2);
-                } else {
-                    futureDate.setDate(futureDate.getDate() + 1);
-                }
-                futureDate.setHours(8, 0, 0, 0); // Set future date time to 8 AM PKT
-
-                futureDay = futureDate.toLocaleDateString('en-US', options);
-
-                // Optionally update any display here
-                // document.getElementById('futureDayDisplay').innerText = 'Text before: ' + futureDay + ' :Text after';
-            } catch (error) {
-                console.error('Error calculating future date:', error);
-            }
-        }
-
-        function copyText(preText, postText) {
-            if (futureDay === '') {
-                alert('Future day is not calculated yet. Please wait.');
-                return;
-            }
-
-            const combinedText = preText + futureDay + postText;
-
-            navigator.clipboard.writeText(combinedText).then(() => {
-                console.log('Text copied to clipboard');
-                showNotification();
-            }).catch(err => {
-                console.error('Could not copy text: ', err);
-            });
-       
-
-
-
+    </script>
 </script>
 </body>
 </html>
